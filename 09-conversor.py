@@ -34,7 +34,8 @@ def pedir_unidad(prompt):
 def pedir_temperatura(unidad_origen):
     """Pide la temperatura en la unidad de origen y la convierte a float."""
     while True:
-        entrada = input(f"Ingresa la temperatura en {UNIDADES[unidad_origen]} ({unidad_origen}): ")
+        entrada = input(
+            f"Ingresa la temperatura en {UNIDADES[unidad_origen]} ({unidad_origen}): ")
         try:
             return float(entrada.replace(",", "."))
         except ValueError:
@@ -80,7 +81,8 @@ def convertir(valor, origen, destino):
 def pedir_continuar():
     """Pregunta al usuario si desea realizar otra conversión."""
     while True:
-        respuesta = input("¿Deseas realizar otra operación? (S/N): ").strip().lower()
+        respuesta = input(
+            "¿Deseas realizar otra operación? (S/N): ").strip().lower()
         if respuesta in ("s", "si", "sí"):
             return True
         if respuesta in ("n", "no"):
@@ -103,7 +105,8 @@ def main():
             break
 
         if unidad_destino == unidad_origen:
-            print("La unidad de origen y destino es la misma. El resultado será el mismo valor.")
+            print(
+                "La unidad de origen y destino es la misma. El resultado será el mismo valor.")
 
         temperatura = pedir_temperatura(unidad_origen)
         resultado = convertir(temperatura, unidad_origen, unidad_destino)
